@@ -1,0 +1,77 @@
+{
+  "name": "angularjs-webpack-starter",
+  "version": "0.0.1",
+  "description": "EPAM Qvid team Angular 1.5 component-oriented skeleton app",
+  "main": "index.ts",
+  "scripts": {
+    "build": "npm run build:dev",
+    "prebuild:dev": "npm run clean:dev",
+    "build:dev": "webpack",
+    "prebuild:prod": "npm run clean:prod",
+    "build:prod": "webpack --config webpack-prod.config.js",
+    "clean:dev": "rimraf .tmp",
+    "clean:prod": "rimraf public",
+    "start": "npm run serve:dev",
+    "serve:dev": "webpack-dev-server",
+    "preserve:prod": "npm run build:prod",
+    "serve:prod": "http-server",
+    "test": "karma start karma.config.js",
+    "test:coverage": "remap-istanbul -i build/coverage/coverage.json -o build/coverage/report -t html",
+    "test:coveralls": "remap-istanbul -i build/coverage/coverage.json -o build/coverage/lcov.info -t lcovonly",
+    "test:coveralls:push": "cat ./build/coverage/lcov.info | ./node_modules/.bin/coveralls"
+  },
+  "contributors": [
+    {
+      "name": "Ilia Fedorov",
+      "email": "ilia_fedorov@epam.com"
+    },
+    {
+      "name": "Viachaslau Kudzinau",
+      "email": "viachaslau_kudzinau@epam.com"
+    }
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/angular": "^1.6.32",
+    "@types/angular-mocks": "^1.5.11",
+    "@types/angular-ui-router": "^1.1.37",
+    "@types/core-js": "^0.9.43",
+    "@types/jasmine": "^2.5.54",
+    "@types/node": "^8.0.26",
+    "@types/webpack-env": "^1.13.0",
+    "angular-mocks": "^1.6.6",
+    "awesome-typescript-loader": "^3.2.3",
+    "core-js": "^2.5.1",
+    "coveralls": "^2.13.1",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^0.11.2",
+    "html-loader": "^0.5.1",
+    "html-webpack-plugin": "^2.30.1",
+    "http-server": "^0.10.0",
+    "istanbul-instrumenter-loader": "^3.0.0",
+    "jasmine-core": "^2.8.0",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage": "^1.1.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-webpack": "^2.0.4",
+    "ng-annotate-loader": "^0.6.1",
+    "node-sass": "^4.5.3",
+    "remap-istanbul": "^0.9.5",
+    "rimraf": "^2.6.1",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "tslint": "^5.7.0",
+    "tslint-loader": "^3.5.3",
+    "typescript": "^2.5.2",
+    "uglifyjs-webpack-plugin": "^1.0.0-beta.2",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
+  },
+  "dependencies": {
+    "@uirouter/angularjs": "1.0.6",
+    "angular": "^1.6.6"
+  }
+}
